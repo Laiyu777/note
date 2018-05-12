@@ -1,0 +1,37 @@
+git init 
+	将这个目录初始化为git管理的仓库 会多出一个.git文件夹
+
+git add <filename>
+	将这个文件添加入暂存区
+
+git commit -m"备注"
+	将暂存区的文件提交到仓库
+
+git status
+	查看这个仓库的变化
+
+git diff <filename>
+	查看某个文件的变化
+
+===========
+版本回退的操作
+git log
+	查看提交记录
+git log -pretty=oneline
+	将提交记录显示到一行上
+
+git reflog
+	查看操作历史
+
+git checkout -- <filename> 
+	适用于工作区的文件
+	如果还没有提交，可以回退操作
+	如果已经提交(add)了，可以先用git reset撤销，然后在再用git checkout
+
+git reset -- <filename>
+	可以撤销暂存区的修改，用于已经add的文件
+
+ rm <filename>
+ 	这个命令用于删除一个文件,删除后git status会发现detected这个文件
+ 	一种情况是直接add，commit掉删除的文件，这个时候就彻底删除了
+ 	另外一种情况想恢复(已经add，没有add的时候不会影响，因为还是在工作区上修改)，可以使用git checkout -- <filename>恢复这个文件
