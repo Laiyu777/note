@@ -1,0 +1,14 @@
+git init 
+	将这个目录初始化为git管理的仓库 会多出一个.git文件夹
+
+git add <filename>
+	将这个文件添加入暂存区
+
+git commit -m"备注"
+	将暂存区的文件提交到仓库
+
+git status
+	查看这个仓库的变化
+
+git diff <filename>
+	查看某个文件的变化
