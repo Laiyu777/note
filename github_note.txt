@@ -35,3 +35,40 @@ git reset -- <filename>
  	这个命令用于删除一个文件,删除后git status会发现detected这个文件
  	一种情况是直接add，commit掉删除的文件，这个时候就彻底删除了
  	另外一种情况想恢复(已经add，没有add的时候不会影响，因为还是在工作区上修改)，可以使用git checkout -- <filename>恢复这个文件
+
+
+=========================
+远程仓库的链接
+git remote add origin https://github.com/tugenhua0707/testgit.git
+	创建链接
+
+git push -u origin master
+	把本地仓库的分支推到远程仓库上去
+	由于远程库是空的，我们第一次推送master分支时，加上了 –u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
+
+git clone https://github.com/Laiyu777/test.git
+	从远程仓库克隆仓库
+
+git checkout 
+	命令加上 –b参数表示创建并切换，相当于如下2条命令	
+	git branch dev 创建分支
+	git checkout dev 切换分支
+
+git merge
+		命令用于合并指定分支到当前分支上
+
+git stash
+	将当前的工作现场隐藏起来
+git stash list
+	列出隐藏工作现场的清单
+git stash drop
+	删除隐藏起来的工作现在
+
+要查看远程库的信息 使用 git remote
+要查看远程库的详细信息 使用 git remote –v
+
+
+
+推送分支： git push origin master 推送主分支
+如果我们现在要推送到其他分支，比如dev分支上，我们还是那个命令
+			 git push origin dev
