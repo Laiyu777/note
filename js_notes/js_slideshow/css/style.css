@@ -1,0 +1,157 @@
+*{
+	margin: 0;
+	border: 0;
+	padding:0;
+}
+@font-face {font-family: 'iconfont';
+    src: url('../images/font/iconfont.eot'); 
+    src: url('../images/font/iconfont.eot') format('embedded-opentype'),
+    url('../images/font/iconfont.woff') format('woff'),
+    url('../images/font/iconfont.ttf') format('truetype'),
+    url('../images/font/iconfont.svg#iconfont') format('svg');
+}
+.main{
+	width: 1200px;
+	height: 460px;
+	margin: 20px auto;
+	overflow: hidden;
+	position: relative;
+}
+
+
+.banner-slide{
+	height: 460px;
+}
+
+.slide1{
+	background: url(../images/bg1.jpg) no-repeat;
+}
+
+.slide2{
+	background: url(../images/bg2.jpg) no-repeat;
+}
+.slide3{
+	background: url(../images/bg3.jpg) no-repeat;
+}
+
+/*设置左右改变图片的样式*/
+.button{
+	height:63px;
+	width: 28px;
+	background: url(../images/arrow.png) no-repeat center center;
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+}
+.prev{
+	left: 250px;
+	transform: rotate(180deg);
+}
+
+.next{
+	right: 0px;
+}
+.button:hover{
+	background-color: #D9D9DF;
+}
+
+.dots{
+	line-height: 15px;
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	height: 20px;
+}
+
+.dots>span{
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+	background:rgba(0,0,0,0.3);
+	margin-left: 8px;
+	box-shadow:0 0 0 2px rgba(255,255,255,0.5);
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.dots>span.active{
+	background:rgba(255,255,255,0.88);
+}
+
+.menu-content{
+	width: 250px;
+	height: 460px;
+	background: rgba(0,0,0,0.1);
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.menu-item{
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+}
+.menu-item:hover{
+	background-color: rgba(0,0,0,0.1);
+}
+.menu-item a:link,
+.menu-item a:active,
+.menu-item a:visited{
+	text-decoration: none;
+	color: white;
+	display: block;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.menu-item a::after{
+	clear: both;
+	display:block;
+	content: "";
+}
+.menu-item span{
+	float: left;
+	margin-left: 30px;
+}
+.menu-item i{
+	font-family: "iconfont";
+	margin-right: 32px;
+	display: inline-block;
+	float: right;
+}
+
+.sub-menu{
+	position: absolute;
+	left: 250px;
+	top: 0px;
+	height: 460px;
+	width: 730px;
+}
+
+.sub-menu-box{
+	height: 460px;
+	width: 730px;
+	background:url(../images/fe.png) no-repeat;
+	padding-top: 30px;
+	padding-left: 30px;
+}
+.sub-menu-box>.title{
+	color: red;
+	font-size: 16px;
+	margin-bottom: 30px;
+	line-height: 16px;
+	height: 16px;
+	font-weight: bold;
+}
+.sub-menu-box > .row{
+	margin-bottom: 25px;
+}
+.sub-menu-box > .row > span:first-child{
+	font-weight: bold;
+	margin-right: 20px;
+}
+.sub-menu-box > .row > a{
+	text-decoration: none;
+	color: black;
+}
+.hide{
+	display: none;
+}
