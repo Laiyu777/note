@@ -12,3 +12,10 @@ git status
 
 git diff <filename>
 	查看某个文件的变化
+
+===========
+版本回退的操作
+git log
+	查看提交记录
+git log -pretty=oneline
+	将提交记录显示到一行上
