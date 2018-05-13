@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浮动元素设置margin等属性的demo</title>
+	<style type="text/css">
+		*{
+			border: 0;
+			margin: 0;
+			padding:0;
+		}
+		body{
+			height: 3000px;
+		}
+		.container{
+			width: 1200px;
+			background: yellow;
+			position: relative;
+		}
+		.container::after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.left1{
+			float: left;
+			width: 500px;
+			height: 400px;
+			background: red;
+			margin-right: 20px;
+		}
+		.left2{
+			float: left;
+			width: 500px;
+			height: 400px;
+			background: green;
+			margin-top: 20px;
+			margin-left: 30px;
+		}
+		.inline-block1{
+			width: 500px;
+			height: 400px;
+			background: red;
+			display: block;
+			margin-right: 20px;
+			margin-bottom: 20px;
+		}
+		.inline-block2{
+			display: inline-block;
+			width: 500px;
+			height: 400px;
+			background: green;
+			margin-left: 30px;
+		}
+		.inline-block3{
+			display: block;
+			width: 500px;
+			height: 400px;
+			background: pink;
+			margin-top: 50px;
+		}
+		
+		.position1{
+			width: 400px;
+			height: 400px;
+			background: green;
+			position: absolute;
+			float: left;
+		}
+		.position2{width: 400px;
+			height: 400px;
+			background: red;
+			position: absolute;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<h1>浮动元素</h1>
+	<div class="container">
+		<div class="left1"></div>
+		<div class="left2"></div>
+	</div>
+	<br>
+	<h1>inline-block元素</h1>
+	<div class="container" style="background-color: blue">
+		<div class="inline-block1"></div>
+		<!-- <div class="inline-block2"></div> -->
+		<div class="inline-block3"></div>
+	</div>
+	<br>
+	<h1>使用position</h1>
+	<div class="container" style="height: 500px;">
+		<div class="position1"></div>
+		<div class="position2"></div>
+	</div>
+
+	
+		<div style="width: 1200px;margin: 0 auto;font-size: 20px;">
+			<h3>1.在设置浮动元素的时候，作用效果很像inline-block，但是不会撑开div的高度</h3>
+		<h3>2.可以使用伪类元素来撑开高度</h3>
+		<h3>3.inline-block左右的外边距不会叠加,上下的也不会叠加,而block的上下边距是会<b style="color: red">叠加</b>的</h3>
+		<h3>4.position和float行成的浮动是不同的</h3>
+		<p>position完全依据父元素的位置来定位，可以使得元素重叠,即使设置了高度 也不会撑开div元素的高度，使用伪类元素也不可以撑开</p>
+		<p>而float使得其变成了inline-block元素，可以撑开元素高度</p>
+		</div>
+</body>
+</html>

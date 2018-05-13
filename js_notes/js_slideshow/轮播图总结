@@ -1,0 +1,12 @@
+实际上就是操纵div元素的display
+
+第一次按照视频写下来 使用overflow:hidden,这样实际是将div隐藏到下面,transition无法作用于display,display瞬间显示
+这个时候就不好设置更换效果，只能很僵硬的通过display的none和block来使用
+
+可以用透明度的办法来实现。
+
+想要实现渐变更换背景图片有2种办法
+
+1.使用元素重叠并且设置透明度，CSS3可以设置透明度变化的动画效果（可以不用考虑z-index）
+
+2.使用setTimeout

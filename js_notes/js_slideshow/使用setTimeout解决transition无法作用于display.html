@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <title>使用setTimeout解决transition无法作用于display</title>
+        <style type="text/css">
+            *{padding: 0;margin: 0;
+            }
+            .title{
+            	font-size: 36px;
+            	margin: 0 auto;
+            	width: 1000px;
+            }
+            .banner {
+                width: 100%;
+                min-width: 1200px;
+                height: 488px;
+                overflow: hidden;
+            }
+
+            .banner_index {
+                position: relative;
+            }
+
+            .banner_slide_1 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: block;
+                transition: opacity 0.5s;
+                opacity: 1;
+                z-index: 5;
+                background: url(images/bg1.jpg) no-repeat;
+                background-position: center 0;
+            }
+
+            .banner_slide_2 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: none;
+                transition: opacity 0.5s;
+                opacity: 0;
+                z-index: 1;
+                background: url(images/bg2.jpg) no-repeat;
+                background-position: center 0;
+            }
+
+            .banner_slide_3 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: none;
+                transition: opacity 0.5s;
+                opacity: 0;
+                z-index: 1;
+                background: url(images/bg3.jpg) no-repeat;
+                background-position: center 0;
+            }
+        </style>
+        <script type="text/javascript">
+            window.onload=function bannerSlide() {
+                if (!document.getElementById) return false;
+                if (!document.getElementsByTagName) return false;
+                if (!document.getElementById("bannerBox")) return false;
+                var i = 0;
+                var box = document.getElementById("bannerBox");
+                var banner = box.getElementsByTagName("div");
+                sli = setInterval(slide, 4000); //轮播间隔时间
+                function slide() {
+                    if (i == banner.length - 1) {
+                        banner[0].style.display = "block";
+                        banner[0].style.opacity = "1";
+                        banner[i].style.opacity = "0";
+                        setTimeout(function() {
+                                banner[i].style.display = "none";
+                                banner[i].style.zIndex = "1";
+                                banner[0].style.zIndex = "5";
+                                i = 0;
+                            }, 500) //动画过渡时间，搭配CSS使用
+                    } else {
+                        banner[i + 1].style.display = "block";
+                        banner[i + 1].style.opacity = "1";
+                        banner[i].style.opacity = "0";
+                        setTimeout(function() {
+                            banner[i + 1].style.zIndex = "5";
+                            banner[i].style.display = "none";
+                            banner[i].style.zIndex = "1";
+                            i++;
+                        }, 500)
+                    }
+                }
+            }
+        </script>
+
+    </head>
+
+    <body>
+		<div class="title"><h2>使用setTimeout解决transition无法作用于display</h2></div>
+        <div id="bannerBox" class="banner banner_index">
+            <div class="banner_slide_1" id="banner1"></div>
+            <div class="banner_slide_2" id="banner2"></div>
+            <div class="banner_slide_3" id="banner3"></div>
+        </div>
+    </body>
+
+</html>
