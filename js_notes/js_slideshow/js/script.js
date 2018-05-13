@@ -19,12 +19,40 @@ var subboxs = submenu.getElementsByClassName("sub-menu-box");
 //鼠标移动到main中的时候要取消定时换图片，离开的时候才会自动换图片
 function changeImage(){
 	//遍历图片，先将图片隐藏
+	//1.滑动的效果可以使用高度,遍历设置要显示的div
+	//2.用透明度的淡入淡出效果
+		//透明度会占据原来的空间。transition不能作用在display上
+		//
+	 //pics[index].style.display = "block";
+	 //pics[index].style.height = "460px";
 	for(var i=0,len=pics.length;i<len;i++){
-		pics[i].style.display = "none";
+		//pics[i].style.height = "0px";
+		pics[i].style.opacity = "0";
 		dots[i].className = "";
+		//延迟执行的时候，这个时候i变成3，数组越界。
+		//window.setTimeout(function(){pics[i].style.display = "none"},500);
+		pics[i].style.display="block";
 	}
-	pics[index].style.display = "block";
+	pics[index].style.opacity = "1";
 	dots[index].className = "active";
+	//pics[index].style.display="block";
+	//window.setTimeout(hideDiv,500);
+}
+
+//将另外两个图片的div的display设置成none,这样不会占据空间
+//先设置成block在设置none，会将div顶上去，造成效果不均匀。
+function hideDiv(){
+	console.log("现在index的值是:"+index);
+	if(index == 0){
+		pics[1].style.display="none";
+		pics[2].style.display="none";
+	}else if(index == 1){
+		pics[0].style.display="none";
+		pics[2].style.display="none";
+	}else{
+		pics[1].style.display="none";
+		pics[0].style.display="none";
+	}
 }
 
 //定时图片
@@ -35,7 +63,7 @@ function setAutoChangeImage(){
 			index = 0;
 		}
 		changeImage()
-	},1000)
+	},5000);
 }
 //停止定时更换
 function stopAutoChangeImage(){
