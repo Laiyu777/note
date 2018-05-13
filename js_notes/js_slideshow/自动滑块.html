@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+			border: 0;
+		}
+		.container{
+			width:1000px;
+			height: 400px;
+			border: 100px solid red;
+			box-sizing: border-box;
+		}
+		.box{
+			width:200px;
+			height: 200px;
+			border: 1px solid green;
+			box-sizing: border-box;
+			background: green;
+			transform: translate(600px,0);
+			transition: all 1s;
+		}
+		.goleft{
+			transform: translate(0,0);
+		}
+		.goright{
+			transform: translate(600px,0);
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box goleft"></div>
+	</div>
+	<script type="text/javascript">
+		var container = document.querySelector(".container");
+		var box = document.querySelector(".box");
+		setInterval(function(){
+			console.log(box);
+			// box.style.width = "500px";
+			//box.style.transform = "translate(0,0);";
+			if(box.className == "box goleft"){
+				box.className = "box goright";
+			}else{
+				box.className = "box goleft";
+			}
+		},1000);
+	</script>
+</body>
+</html>
