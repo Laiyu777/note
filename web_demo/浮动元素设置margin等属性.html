@@ -73,6 +73,13 @@
 			position: absolute;
 			float: left;
 		}
+		b{
+			font-weight: bold;
+			color: red;
+		}
+		div>h3{
+			line-height: 50px;
+		}
 	</style>
 </head>
 <body>
@@ -97,12 +104,16 @@
 
 	
 		<div style="width: 1200px;margin: 0 auto;font-size: 20px;">
-			<h3>1.在设置浮动元素的时候，作用效果很像inline-block，但是不会撑开div的高度</h3>
+			<h3>1.在设置浮动元素的时候，作用效果很像inline-block，会占据父元素的宽度。但是不会撑开div的高度</h3>
 		<h3>2.可以使用伪类元素来撑开高度</h3>
-		<h3>3.inline-block左右的外边距不会叠加,上下的也不会叠加,而block的上下边距是会<b style="color: red">叠加</b>的</h3>
+		<h3>3.inline-block左右的外边距不会叠加,上下的也不会叠加,而block的上下边距是会<b>叠加</b>的</h3>
 		<h3>4.position和float行成的浮动是不同的</h3>
-		<p>position完全依据父元素的位置来定位，可以使得元素重叠,即使设置了高度 也不会撑开div元素的高度，使用伪类元素也不可以撑开</p>
+		<p>position完全依据父元素的位置来定位，可以使得子元素重叠,即使设置了高度 也不会撑开div元素的高度，使用伪类元素也不可以撑开</p>
 		<p>而float使得其变成了inline-block元素，可以撑开元素高度</p>
+
+		<h3>使用position:absolute和float来定位的时候，他们<b>两个都是不会撑开父元素的高度的</b>，但是float定位可以使用伪类来撑开，position是不可以的.
+		他们都可以同时设置margin的样子。
+		</h3>
 		</div>
 </body>
 </html>
