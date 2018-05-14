@@ -2,19 +2,22 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>测试浮动元素会不会占据宽度</title>
+	<title>	</title>
 	<style type="text/css">
 		.container{
 			width: 500px;
 			height: 500px;
 			background-color: red;
+			position: relative;
 		}
 		.box{
 			width: 200px;
 			height: 200px;
-			background: green;
-			float: left;
-			margin-left: 300px;
+			background-color: green;
+			position: absolute;
+			left: 20px;
+			top:20px;
+			margin:20px 20px;
 		}
 	</style>
 </head>
@@ -24,6 +27,7 @@
 		<div class="box"></div>
 		<span>777</span>
 	</div>
-	<h2>为什么span会给挤到上面？</h2>
+
+	<h2>说明position定位的元素是不占据位置的。</h2>
 </body>
 </html>

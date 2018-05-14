@@ -1,0 +1,123 @@
+*{
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+body{
+	font-family: "微软雅黑";
+}
+
+a:link,a:visited{
+	text-decoration: none;
+	color:black;
+}
+
+.header{
+	height: 60px;
+	background-color: white;
+	line-height: 60px;
+}
+.header > .logo {
+	float: left;
+	margin-left: 10px;
+	background: url(../images/logo.png) no-repeat left center;
+	padding-left: 50px;
+	font-size: 18px;
+}
+.header > .nav{
+	float: right;
+	line-height: 40px;
+
+	margin: 10px 10px 0 0;
+}
+
+.header > .nav > a{
+	width: 60px;
+	display: inline-block;
+	text-align: center;
+	padding: 0 20px;
+	font-size: 14px;
+	float: left;
+}
+
+.header > .nav > a:last-child{
+	background: black;
+	border-radius: 5px;
+	color: white;
+	margin: 0px 20px;
+}
+
+.header > .nav > a.active{
+	color: red;
+	border-bottom: 2px solid red;
+}
+
+
+.screen{
+	height: 800px;
+	text-align: center;
+}
+.screen-1-bg{
+	background:url(../images/bg-screen-1.png) no-repeat center center;
+}
+.screen-2-bg{
+	background:#fafafa url(../images/bg-screen-2.png) no-repeat;
+	background-position: 50% 310px;
+}
+.screen-3-bg{
+	background:url(../images/bg-screen-3.png) no-repeat center center;
+}
+.screen-4-bg{
+	background:url(../images/bg-screen-4.png) no-repeat center center;
+}
+.screen-5-bg{
+	background:url(../images/bg-screen-5.png) no-repeat center center;
+}
+.wrap{
+	width: 1200px;
+	margin: 0 auto;
+	height: 100%;
+	position: relative;
+}
+
+.heading{
+	font-size: 42px;
+	color: white;
+	position: absolute;
+	top: 117px;
+	width: 100%;
+}
+.heading > b{
+	color:red;
+	font-weight: normal; 
+}
+.heading > .paragraph{
+	color:black;
+	font-size: 16px;
+	position: absolute;
+	top:100px;
+	width: 100%;
+}
+
+.screen-1-phone{
+	background:url(../images/screen-1-phone.png) no-repeat center center;
+	height: 305px;
+	width: 1375px;
+	position: absolute;
+	top: 280px;
+	left: 50%;
+	margin-left: -687px;
+	z-index: 2;
+}
+.screen-1-shadow{
+	background: url(../images/screen-1-shadow.png);
+	position: absolute;
+	top: 400px;
+	width: 1240px;
+	height: 420px;
+	z-index: 1;
+}
+
+.screen-2-phone{
+
+}
