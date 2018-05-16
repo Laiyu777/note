@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	h1{
+		background: gray;
+	}
+		.container{
+			height: 500px;
+			border: 2px solid green;
+			background: pink;
+		}
+		.box{
+			width: 1000px;
+			height: 200px;
+			background: red;
+			float: left;
+		}
+		.box2{
+			width: 1000px;
+			height: 200px;
+			background: red;
+			overflow: hidden;
+		}
+		.box3{
+			width: 1000px;
+			height: 200px;
+			background: red;
+			position: absolute;
+		}
+		.box4{
+			width: 1000px;
+			height: 200px;
+			background: red;
+			margin-top: 50px;
+		}
+		
+	</style>
+</head>
+<body>
+	<h1>两个float元素不会发生margin叠加</h1>
+	<div class="container">
+		<div class="box" style="margin-bottom: 20px;"></div>
+		<div class="box" style="margin-top: 50px;"></div>
+	</div>
+	
+	<h1>两个overflow:hidden元素会发生margin叠加</h1>
+	<div class="container">
+		<div class="box2" style="margin-bottom: 20px;"></div>
+		<div class="box2" style="margin-top: 50px;"></div>
+	</div>
+	<h1>两个position:absolute元素会发生margin叠加</h1>
+	<div class="container" style="position: relative;">
+		<div class="box3" style="margin-bottom: 20px;"></div>
+		<div class="box3" style="margin-top: 50px;top: 200px"></div>
+	</div>
+	<h1>解决父元素的margin-top和子元素的margin-top叠加的问题,父元素声明BFC,这个时候margin不会撑开父元素的高度</h1>
+	<div class="container" style="border: none;overflow: hidden;">
+		<div class="box4"></div>
+	</div>
+	<div class="placeholder" style="height: 100px;background-color: black;"></div>
+</body>
+</html>

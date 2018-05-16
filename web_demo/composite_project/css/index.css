@@ -70,9 +70,7 @@ a:link,a:visited{
 .screen-4-bg{
 	background:url(../images/bg-screen-4.png) no-repeat center center;
 }
-.screen-5-bg{
-	background:url(../images/bg-screen-5.png) no-repeat center center;
-}
+
 .wrap{
 	width: 1200px;
 	margin: 0 auto;
@@ -118,6 +116,161 @@ a:link,a:visited{
 	z-index: 1;
 }
 
-.screen-2-phone{
+.screen-3{
+	background-color: #a71316;
+	color: white;
+	height: 800px;
+}
 
+.screen-3-wrap,
+.screen-4-wrap{
+	max-width: 1200px;
+	min-width: 800px;
+	height: 100%;
+	overflow: hidden;
+	margin: 0 auto;
+	position: relative;
+}
+
+.screen-3 > .screen-3-wrap > .screen-3-wrap-heading{
+	position: absolute;
+	left: 10px;
+	top: 100px;
+}
+
+.screen-3 > .screen-3-wrap > .screen-3-wrap-heading >div:first-child{
+	font-size: 42px;
+	font-weight: normal;	
+	margin-bottom: 30px;
+}
+
+.screen-3 > .screen-3-wrap > .screen-3-wrap-heading >div:nth-child(2){
+	font-size: 16px;
+	font-weight: normal;
+}
+
+.screen-3-phone{
+	width: 730px;
+	height: 900px;
+	position: absolute;
+	top: 200px;
+	left: 465px;
+	background: url(../images/bg-screen-3.png) no-repeat center;
+	background-size:cover;
+}
+.point-1{
+	background: url(../images/icon-point-right.png) no-repeat right center;
+	position: absolute;
+	top: 481px;
+	left: -63px;
+	width: 273px;
+	font-size: 20px;
+}
+.point-2{
+	background: url(../images/icon-point-left.png) no-repeat left center;
+	position: absolute;
+	top: 356px;
+	left: 720px;
+	width: 273px;
+	font-size: 20px;
+}
+.point-3{
+	background: url(../images/icon-point-left.png) no-repeat left center;
+	position: absolute;
+	top: 545px;
+	left: 784px;
+	width: 273px;
+	font-size: 20px;
+}
+.screen-3-container{
+	position: absolute;
+	width: 328px;
+	height: 288px;
+	left: 5px;
+	bottom: 140px;
+}
+.screen-3-box{
+	float: left;
+	width: 138px;
+	height:118px;
+	margin: 0 20px 20px 0;
+	border-radius: 3px;
+	border: 1px solid white;
+	text-align: center;
+}
+.screen-3-box-up{
+	display: block;
+	padding: 32px 0 9px 0;
+	font-size: 36px;
+	line-height: 36px;
+	height: 36px;
+}
+
+.screen-4{
+	height: 800px;
+	background: white;
+}
+.screen-4-wrap-heading{
+	text-align: center;
+}
+.screen-4-wrap-heading > div:first-child{
+	color:red;
+	font-weight: normal;
+	font-size: 42px;
+	margin-bottom: 50px;
+	margin-top: 80px;
+}
+
+.screen-4-wrap-heading > div:last-child{
+	margin-bottom: 90px;
+}
+
+
+.screen-4{
+	height: 800px;
+	background: white;
+}
+.screen-4-phone{
+	width: 1300px;
+	height: 270px;
+	margin-right:90px;
+	text-align: center;
+	padding-bottom: 240px;
+}
+.screen-4-phone-1{width:220px;background: url(../images/phone-1.png) no-repeat left top; float: left;}
+.screen-4-phone-2{width:220px;background: url(../images/phone-2.png) no-repeat left top; float: left;}
+.screen-4-phone-3{width:220px;background: url(../images/phone-3.png) no-repeat left top; float: left;}
+.screen-4-phone-4{width:220px;background: url(../images/phone-4.png) no-repeat left top; float: left;}
+
+.screen-4-phone-up{
+	margin-top:290px;
+	margin-bottom: 10px;
+}
+.screen-4-phone-up-down{
+	display: block;
+}
+.screen-5{
+	height: 800px;
+	background-color: pink;
+}
+.screen-5-wrap{
+	width: 1300px;
+	height: 100%;
+	margin: 0 auto;
+}
+.screen-5-wrap-heading{
+	margin-bottom: 200px;
+	margin-top: 300px;
+	text-align: center;
+}
+.screen-5-wrap-heading>div:first-child{
+	font-size: 42px;
+	color: red;
+	margin- top:200px;
+	margin- bottom:100px;
+}
+.screen-5-phone-bg{
+	background:url(../images/bg-screen-5.png) no-repeat center center;
+	height: 572px;
+	width: 2686px;
 }
