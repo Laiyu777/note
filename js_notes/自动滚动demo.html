@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自动滚动</title>
+	<script type="text/javascript" src="641网站/js/jquery1.12.4.min.js"></script>
+	<style type="text/css">
+		.container{
+			width: 1000px;
+			border:1px solid red;
+			position: relative;
+			height: 300px;
+			overflow: auto;
+			white-space: nowrap;
+		}
+		.img{
+			border: 1px solid black;
+			height:200px;
+			width: 200px;
+			display: inline-block;
+		}
+		.box,.box2{
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<p>Hello</p>
+	<div>
+		<span>Hello Again</span>
+	</div>
+	<p>And Again</p>
+
+
+	<div class="container" onscroll="record()">
+		<div class="box">
+			<div class="img">1</div>	
+			<div class="img">2</div>	
+			<div class="img">3</div>	
+			<div class="img">4</div>
+			<div class="img">5</div>
+			<div class="img">6</div>			
+		</div>
+		<div class="box2"></div>
+	</div>
+	<button id="btn">点击效果</button>
+<script type="text/javascript">
+	var timer;
+	var $container = $("div.container");
+	var $box = $("div.box");
+	var $box2 = $("div.box2");
+	var $images = $box.html();
+	$box2.append($images);
+	// alert($box[0].offsetWidth)
+	// console.log("第一次images"+$images);
+	var slide = function(){
+		console.log("$container[0].scrollLeft:"+$container[0].scrollLeft);
+		console.log("$box[0].offsetWidth:"+$box[0].offsetWidth);
+		// console.log("$box[0].scrollWidth:"+$box[0].scrollWidth);
+		if($container[0].scrollLeft>=$box[0].offsetWidth){
+			$container[0].scrollLeft =0;
+		}else{
+			$container[0].scrollLeft++;
+		}
+	}
+	$("#btn").click(function(){
+		clearInterval(timer);
+		// slide();
+	});
+	 timer = setInterval(slide,10);
+// =======================================
+function record(){
+	var $container = $("div.container");
+	console.log("$container[0].scrollLeft:"+$container[0].scrollLeft);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin:0;
+		}
+		body{
+			height: 8000px;
+		}
+		.container{
+			height: 500px;
+			width: 500px;
+			border: 1px solid red;
+			margin-left: 10px;	
+			white-space: nowrap;
+			overflow: hidden;
+			position: relative;	
+		}
+		.box{
+			position: absolute;
+			left: 50px;
+			height: 400px;
+			width: 200px;
+			border: 1px solid red;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div class="container" id="container">
+		<div class="box" id="box"></div>
+		<div class="box" id="box"></div>
+		<div class="box" id="box"></div>
+		<div class="box" id="box"></div>
+		<div class="box" id="box"></div>
+	</div>
+	<script type="text/javascript">
+		var box = document.getElementById("box");
+		console.log("box.scrollLeft:"+box.scrollLeft);
+		console.log("box.scrollTop:"+box.scrollTop);
+		console.log("box.scrollHeight:"+box.scrollHeight);
+		console.log("box.scrollWidth:"+box.scrollWidth);
+		console.log("box.offsetLeft:"+box.offsetLeft);
+		console.log("box.offsetTop:"+box.offsetTop);
+		console.log("box.offsetWidth:"+box.offsetWidth);
+		console.log("box.offsetHeight:"+box.offsetHeight);
+		console.log("===========");
+		console.log("container.scrollLeft:"+container.scrollLeft);
+		console.log("container.scrollTop:"+container.scrollTop);
+		console.log("container.scrollHeight:"+container.scrollHeight);
+		console.log("container.scrollWidth:"+container.scrollWidth);
+		console.log("container.offsetLeft:"+container.offsetLeft);
+		console.log("container.offsetTop:"+container.offsetTop);
+		console.log("container.offsetWidth:"+container.offsetWidth);
+		console.log("container.offsetHeight:"+container.offsetHeight);
+
+	</script>
+</body>
+</html>
