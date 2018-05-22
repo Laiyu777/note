@@ -27,6 +27,12 @@
 			border: 1px solid red;
 			display: inline-block;
 		}
+		.content{
+			margin: 0 auto;
+			text-align: center;
+			font-size: 30px;
+			width: 1200px;
+		}
 	</style>
 </head>
 <body>
@@ -37,6 +43,28 @@
 		<div class="box" id="box"></div>
 		<div class="box" id="box"></div>
 	</div>
+	<div class="content">
+		<table border="1" cellpadding="5" style="width: 1200px">
+			<tr>
+				<td>scrollLeft,scrollRight</td>
+				<td>overhidden的时候可以滚动的左右距离，就是溢出的长度</td>
+			</tr>
+			<tr>
+				<td>scrollWidth,scrollHeight</td>
+				<td>内容区域的宽度和高度</td>
+			</tr>
+			<tr>
+				<td>offsetTop,offsetLeft</td>
+				<td>相对于父元素的左距离或者上距离，父元素应该是一个BFC块，如果用position定位，则会取到想要的值，否则是相对于html根元素的</td>
+			</tr>
+			<tr>
+				<td>offsetWidth,offsetHeight</td>
+				<td>元素本身的边框长度，计算的时候有包含border，不包含margin</td>
+			</tr>
+		</table>
+	
+	</div>
+
 	<script type="text/javascript">
 		var box = document.getElementById("box");
 		console.log("box.scrollLeft:"+box.scrollLeft);
