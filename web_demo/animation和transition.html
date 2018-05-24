@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/prism.css">
+	<script type="text/javascript" src="js/jquery1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/prism.js"></script>
+	<style type="text/css">
+		.container{
+			margin: 0 auto;
+			background-color: #CDCDCD;
+			width: 1200px;
+		}
+
+		p{
+			height: 30px;
+			line-height: 30px;
+			font-size: 22px;
+			text-indent: 2em;
+		}
+
+		button{
+			height: 50px;
+			width: 120px;
+			background-color: #CDCDCD;
+			line-height: 50px;
+			border: 0;
+			margin-right: 20px;
+		}
+
+		.container-inner{
+			background-color: #F5F2F0;
+		}
+
+		.box{
+			height: 200px;
+			width: 200px;
+			background: red;
+			transition: all 2s;
+		}
+		.box:hover{
+			width: 500px;
+			background: yellow;
+		}
+
+		.box2{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			transition: all 3s;
+		}
+		.box2:hover{
+			background: black;
+			-webkit-animation:myfirst 3s;
+		}
+		@-webkit-keyframes myfirst{
+			from{
+				background: green;width: 100px/*覆盖了原来的样式*/
+			}
+			to{
+				background: pink;width: 300px;/*覆盖了原来的样式*/
+			}
+		}
+
+		.box3{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			
+		}
+		
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<h1>使用不同方法的动画效果</h1>
+		<hr>
+		<div class="container-inner">
+			<h2>使用hover</h2>
+			<pre>
+				<code class="language-css">				
+.box{
+	height: 200px;
+	width: 200px;
+	background: red;
+	transition: all 2s;
+}
+.box:hover{
+	width: 500px;
+	background: yellow;
+}
+				</code>
+			</pre>
+			<div class="box">
+		</div>
+		</div>
+		<hr>
+		<div class="container-inner">
+			<h2>使用animation</h2>
+			<p>
+				animation的优先级是大于transtion的，就是当设置animation的时候，transition会失效
+			</p>
+			<pre><code class="language-css">
+.box2{
+	width: 200px;
+	height: 200px;
+	background-color: red;
+	transition: all 3s;/*这行没有作用*/
+}
+.box2:hover{
+	-webkit-animation:myfirst 3s;
+	background: black;/*这行没有作用*/
+}
+@-webkit-keyframes myfirst{
+	from{
+		background: green;width: 100px/*覆盖了原来的样式*/
+	}
+	to{
+		background: pink;width: 300px;/*覆盖了原来的样式*/
+	}
+}
+			</code></pre>
+			<div class="box2"></div>
+		</div>
+
+		<hr>
+
+		<div class="container-inner">
+			<h2>使用jquery的hide(mills)和show(mills)</h2>
+			<pre><code class="language-javascript">
+$("#hide").on("click",function(){
+	$(this).prev().hide(2000)	
+})
+$("#show").on("click",function(){
+	$(this).prev().prev().show(2000)
+})
+			</code></pre>
+			<div class="box3"></div>
+			<button id="hide">hide(2000)</button>
+			<button id="show">show(2000)</button>
+
+			<h2>使用jquery的fadeIn(mills)和fadeOut(mills)</h2>
+			<div class="box3"></div>
+			<button id="fadeOut">fadeOut(2000)</button>
+			<button id="fadeIn">fadeIn(2000)</button>
+
+			<h2>使用jquery的slideUp(mills)和slideDown(mills)</h2>
+			<div class="box3"></div>
+			<button id="slideUp">slideUp(2000)</button>
+			<button id="slideDown">slideDown(2000)</button>
+		</div>	
+	
+		<div class="container-inner" style="height: 500px"></div>
+
+	</div><!--container 结束-->
+
+	<script type="text/javascript">
+		$("#hide").on("click",function(){
+			$(this).prev().hide(2000)	
+		})
+		$("#show").on("click",function(){
+			$(this).prev().prev().show(2000)
+		})
+
+		$("#fadeOut").on("click",function(){
+			$(this).prev().fadeOut(2000)
+		})
+
+		$("#fadeIn").on("click",function(){
+			$(this).prev().prev().fadeIn(2000)
+		})
+
+		$("#slideUp").on("click",function(){
+			$(this).prev().slideUp(2000)
+		})
+
+		$("#slideDown").on("click",function(){
+			$(this).prev().prev().slideDown(2000)
+		})
+
+		
+	</script>
+</body>
+</html>
