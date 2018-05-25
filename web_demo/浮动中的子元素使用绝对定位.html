@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.container{
+			height: 500px;
+			width: 500px;
+			background: red;
+		}
+		.box{
+			height: 200px;
+			width: 200px;
+			background: green;
+			float: left;
+			margin-left: 100px;
+		}
+		.inner{
+			height: 100px;
+			width: 100px;
+			position: absolute;
+			/*left: 20px;
+			top: 20px;*/
+			background: orange;
+		}
+	</style>
+</head>
+<body>
+	<h2>会去有定位的父元素元素，不会去找浮动元素</h2>
+	<h2>设置position:absolute|relative的时候，没有设置left和top的值，就是默认在原来的位置显示</h2>
+	<h2>有设置的话就会去找有定位的父元素。</h2>
+	<div class="container">
+		<div class="box">
+			<div class="inner"></div>
+		</div>
+	</div>
+</body>
+</html>

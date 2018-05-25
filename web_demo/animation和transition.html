@@ -11,6 +11,7 @@
 			margin: 0 auto;
 			background-color: #CDCDCD;
 			width: 1200px;
+			height: 20000px;
 		}
 
 		p{
@@ -68,6 +69,21 @@
 			height: 200px;
 			background-color: red;
 			
+		}
+
+		.box4{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			animation: second 2s;
+			display: none;
+			/*transform: rotate(180deg);*//*默认rotate是0deg*/
+			/*transform: scale(0);*//*默认scale是1*/
+			background: rgba(0,0,0,0.2);
+		}
+		@-webkit-keyframes second{
+			from{transform: scale(0);}
+			to{transform: scale(1);}
 		}
 		
 	</style>
@@ -152,7 +168,35 @@ $("#show").on("click",function(){
 			<button id="slideDown">slideDown(2000)</button>
 		</div>	
 	
-		<div class="container-inner" style="height: 500px"></div>
+		<div class="container-inner">
+			<h2>使用display+animation产生动画效果(需要jquery)</h2>
+			<p>在keyframes中设置transform:scale(0)-->(1)，当display变为block的时候，就会执行这个动画</p>
+			<p>transform:scale这个值在元素中默认是1,其他值是none,意思是回到css中写的样式</p>
+			<p>display的高度还是马上显示出来的,可以在from和to中设置heght:0px--->100px;</p>
+			<pre><code class="language-css">
+.box4{
+	width: 200px;
+	height: 200px;
+	background-color: red;
+	animation: second 2s;
+	display: none;			
+	background: rgba(0,0,0,0.2);
+}
+@-webkit-keyframes second{
+	from{transform: scale(0);}
+	to{transform: scale(1);}
+}
+			</code></pre>
+			<pre><code class="language-javascript">
+$("#modal_btn").click(function(){
+	$(this).prev().css("display","block");
+})
+			</code></pre>
+			<div class="box4">&gt;&gt;&gt;&gt;&gt;</div>
+			<button id="modal_btn">产生模态框</button>
+			
+
+		</div>
 
 	</div><!--container 结束-->
 
@@ -180,6 +224,9 @@ $("#show").on("click",function(){
 			$(this).prev().prev().slideDown(2000)
 		})
 
+		$("#modal_btn").click(function(){
+			$(this).prev().css("display","block");
+		})
 		
 	</script>
 </body>
