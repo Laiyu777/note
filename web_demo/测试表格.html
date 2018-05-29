@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style text="text/css">
+		*{
+			padding:0;
+			border: 0;
+			margin: 0;
+		}
+		table{
+			border-collapse:collapse; 
+			width: 500px;
+		}
+		table > thead{
+			border-bottom: 2px solid red;
+		}
+		table td {
+			border-bottom: 1px solid green;
+		}
+		table > tbody > tr > td:first-child{
+			border-right: 1px dotted orange;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<td>部门</td>
+				<td>人员</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>aaa</td>
+				<td>小红，小明</td>
+			</tr>
+			<tr>
+				<td>bbb</td>
+				<td>小红，小明</td>
+			</tr>
+			<tr>
+				<td>ccc</td>
+				<td>小红，小明小红，小明</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>小红，小明，小明</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>小红，小明小红，小明小红，小明小红，小明</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

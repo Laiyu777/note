@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>bootstrap4</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
+  </head>
+  <body>
+    <div id="summernote"></div>
+    <button id="btn">获取</button>
+    <button id="save">保存</button>
+    <button id="cancel">取消编辑</button>
+    <div id="content">
+    	asdfkjaskjf奥斯卡的房间爱上
+    </div>
+    <script>
+      $('#summernote').summernote({
+        placeholder: 'Hello stand alone ui',
+        tabsize: 2,
+        height: 100,
+
+      });
+      $("#btn").click(function(){
+      		$("#content").summernote({focus:true})
+      })
+
+      $("#save").click(function(){
+	      	var a= $('#content').summernote('code');
+	      	console.log(a);
+	  		//$('#content').summernote('destroy');
+      })
+
+      $("#cancel").click(function(){
+	      	// alert('asdasd')
+	      	// $("#summernote").summernote({focus:true})
+      		 $('#summernote').summernote('code');
+      		$('#summernote').summernote('destroy');
+      })
+
+    </script>
+
+  </body>
+</html>
