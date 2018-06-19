@@ -1,0 +1,14 @@
+表单中button默认的属性是submit，使用type=button可以改变这个值
+
+想使用html5的校验功能，但是又不想表单提交后跳转页面：
+解决方案就是：$("#form").submit(function{
+	这里自己写一个ajax请求,然后根据页面
+	....
+	return false;
+});
+这里可以提交表单(ajax)，同时自己控制页面跳转
+
+submit()函数是在表单自己提交前提交的，只要我们return false
+就可以阻止原来的提交从而使用自己的ajax请求
+
+这个demo在641台网站的注册表单中有使用。
